@@ -4,31 +4,31 @@ import { Menu, X } from "lucide-react";
 import Logo from "./logo";
 
 const navItems = [
-    { to: "/landingpage", label: "Landing" },
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/contact", label: "Contact" },
+    { to: "/auth", label: "Logout" },
 ];
 
 const linkClassName = ({ isActive }) =>
     [
-        "rounded-full px-4 py-2 text-sm font-medium transition-all duration-200",
+        "rounded-full px-4 py-2 text-md font-semibold transition-all duration-200",
         isActive
-            ? "bg-pink-50 text-pink-600"
-            : "text-slate-600 hover:bg-pink-50 hover:text-pink-600 hover:-translate-y-0.5",
+            ? "bg-pink-50 text-[#954D4B]"
+            : "text-[#954D4B] hover:bg-pink-50 hover:text-[#954D4B] hover:-translate-y-0.5",
     ].join(" ");
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <header className="sticky top-0 z-50 border-b border-pink-100 bg-white/90 backdrop-blur">
-            <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-                <NavLink to="/landingpage" className="flex items-center gap-3 rounded-xl p-2 transition-all duration-200 hover:bg-pink-50 hover:shadow-sm">
+        <header className="sticky top-0 z-50 border-b border-pink-100 bg-white-90 backdrop-blur">
+            <nav className="mx-5 flex max-w-6xl gap-100 px-4 py-4 sm:px-6 lg:px-3">
+                <NavLink to="/" className="flex gap-3 rounded-xl p-2 transition-all duration-200 hover:bg-[#a37471] hover:shadow-sm">
                     <Logo />
                     <div className="leading-tight">
-                        <p className="text-base font-semibold text-pink-500">Satin Beauty</p>
-                        <p className="text-xs text-pink-500">Authentic Makeup Brand</p>
+                        <p className=" font-semibold text-[#954D4B] italic font-serif">Satin Beauty</p>
+                        <p className="text-xs text-[#954D4B]  font-serif">Authentic Makeup Brand</p>
                     </div>
                 </NavLink>
 
